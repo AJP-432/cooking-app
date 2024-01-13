@@ -5,16 +5,17 @@ import Nav from "./components/Nav"
 import SplashPage from './pages/SplashPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import NewRecipe from './pages/NewRecipePage';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>App.js to start working on your app!</Text>
-      <HomePage />
-      <Nav/>
-      <StatusBar style="auto" />
-    </View>
-    
+    // <View style={styles.container}>
+    //   <Text>App.js to start working on your app!</Text>
+    //   <HomePage />
+    //   <Nav/>
+    //   <StatusBar style="auto" />
+    // </View>
+    <NewRecipe />
   );
 }
 
@@ -27,4 +28,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
