@@ -5,6 +5,7 @@ import Nav from "./components/Nav"
 import SplashPage from './pages/SplashPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import NewRecipe from './pages/NewRecipePage';
 
 export default function App() {
   return (
@@ -27,4 +28,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
