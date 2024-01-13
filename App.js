@@ -8,12 +8,12 @@ import Register from './pages/Register';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>App.js to start working on your app!</Text>
+    // <View style={styles.container}>
+    //   <Text>App.js to start working on your app!</Text>
       <HomePage />
-      <Nav/>
-      <StatusBar style="auto" />
-    </View>
+      // <Nav/>
+      // <StatusBar style="auto" />
+    // </View>
     
   );
 }
