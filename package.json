@@ -9,6 +9,16 @@
     "web": "expo start --web"
   },
   "dependencies": {
+<<<<<<< Updated upstream
+=======
+    "@expo/vector-icons": "^13.0.0",
+    "@react-native-community/viewpager": "^5.0.11",
+    "@react-native-vector-icons/ionicons": "^7.2.2-alpha.3",
+    "@react-navigation/bottom-tabs": "^6.5.11",
+    "@react-navigation/native": "^6.1.9",
+    "@react-navigation/native-stack": "^6.9.17",
+    "@react-navigation/stack": "^6.3.20",
+>>>>>>> Stashed changes
     "expo": "~49.0.15",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
