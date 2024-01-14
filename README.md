@@ -1,5 +1,5 @@
-# SIMPLYUM 🥗
-Delta Hacks 2024 
+# SimplYum 🥗
+DeltaHacks 2024 
 
 ## Introduction
 What should I cook with what’s left in the fridge? What should I eat to meet my fitness goals? How can I prepare simple and nutritious meals? Our team recognizes that these are struggles that many people, especially university students, have in their everyday life.
@@ -8,17 +8,10 @@ To address this issue with modern technology, we developed a phone application w
 
 
 ## Features 📚
-Our application includes:
-- Extraction of real time stock prices
-- Calculate Simple Moving Averages (SMA) and Exponential Moving Averages (EMA)
-- Compute the Relative Strength Index (RSI) to assess the stock's momentum
-- Calculate the Moving Average Convergence Divergence (MACD)
-- Visualize stock price trends with interactive charts
-- AI Advise on investment of the stock
+SimplYum utilizes AI to generate customized recipes based on the ingredients, the cuisine preference, and the fitness goals the user has. Our app saves the recipes the users create, and allows them to reuse their favorite recipes. Users can also view their daily/weekly calorie and nutrition intake in the user insight page to keep track of their fitness goals. SimplYum  transforms cooking into a simple and enjoyable process, promoting healthy eating habits and a love for cooking.
 
 ## Getting Started 🏁
-
-Follow these steps to set up and run the FlockStock web application locally:
+Follow these steps to set up and run the SimplYum application locally:
 
 1. Clone the repository:
 
@@ -33,7 +26,7 @@ Follow these steps to set up and run the FlockStock web application locally:
     ```bash
     npm run Android 
 
-4. Your app should run on your emulator!
+4. Your app should run on your andriod emulator!
 
 ## License 🪪
 
