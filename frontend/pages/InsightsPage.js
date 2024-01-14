@@ -92,6 +92,7 @@ const Insight = () => {
           borderRadius: 16,
         }}
       />
+      
     </View>
   );
 };

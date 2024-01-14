@@ -31,6 +31,7 @@ export default function App() {
       <Stack.Screen name="Navigation" component={Navigation} />
     </Stack.Navigator>
   </NavigationContainer>
+  
   );
 }
 
