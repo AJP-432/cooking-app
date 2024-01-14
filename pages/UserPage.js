@@ -14,11 +14,13 @@ const UserProfile = () => {
         source={require('../assets/gordon-ramsay.jpg')} // TODO: Replace with Google Account image, name, and other information
         style={styles.profileImage}
       />
-      <Text style={styles.userName}>Gordon Ramsay</Text>
-      <Text style={styles.userInfo}>Username: XXXX</Text>
-      <Text style={styles.userInfo}>Gender: XXXX</Text>
-      <Text style={styles.userInfo}>Height: XXXX</Text>
-      <Text style={styles.userInfo}>Weight: XXXX</Text>
+      <View style={styles.leftcontainer}>
+        <Text style={styles.userName}>Gordon Ramsay</Text>
+        <Text style={styles.userInfo}>Username: XXXX</Text>
+        <Text style={styles.userInfo}>Gender: XXXX</Text>
+        <Text style={styles.userInfo}>Height: XXXX</Text>
+        <Text style={styles.userInfo}>Weight: XXXX</Text>
+      </View>
     </View>
   );
 };
@@ -35,10 +37,12 @@ const styles = StyleSheet.create({
     marginTop: marginTop,
     backgroundColor: '#FFF',
   },
+  leftcontainer: {
+  },
   profileImage: {
-    width: imageSize / 1.5,
-    height: imageSize / 1.5,
-    borderRadius: imageSize / 3,
+    width: imageSize / 1,
+    height: imageSize / 1,
+    borderRadius: imageSize / 2,
   },
   title: {
     fontSize: 30,
