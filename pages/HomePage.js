@@ -45,10 +45,11 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: '#fff',
+    marginVertical: 5,
   },
   header: {
     textAlign: 'right',
-    margin: 10,
+    margin: 20,
   },
   welcomeText: {
     fontSize: 20,
@@ -57,7 +58,8 @@ const styles = StyleSheet.create({
   },
   recipeCard: {
     flex: 1,
-    margin: 5,
+    margin: 10,
+    marginVertical: 30,
     padding: 10,
     borderRadius: 10,
     backgroundColor: '#f0f0f0',
