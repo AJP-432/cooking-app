@@ -15,7 +15,7 @@ export default function SplashPage({navigation}) {
         <Text style={styles.splashHeading}>Oi, Get Cooking!</Text>
 
         {/* Enter Button */}
-        <CustomButton title="Start Cooking" callbackFunction={() => {navigation.navigate('Home')}} style={styles.splashButton}/> 
+        <CustomButton title="Start Cooking" callbackFunction={() => {navigation.navigate('Login')}} style={styles.splashButton}/> 
       </View>
     </ImageBackground>
   );

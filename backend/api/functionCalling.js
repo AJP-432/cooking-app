@@ -52,16 +52,18 @@ async function runConversation(ingredients, mealType, goals) {
       type: "function",
       function: {
         name: "generate_recipe",
-        description: "Generate a recipe (with name) based on ingredients, style, and fitness goals",
+        description: "Generate a recipe (with recipeName and step by step instruction (array of multiple strings)) based on ingredients, style, and fitness goals",
         parameters: {
           type: "object",
           properties: {
             recipeName: {type: "string", description: "Recipe Name"},
-            ingredients: { type: "array", type: "string", description: "List of ingredients" },
-            steps: { type: "array", type: "string", description: "List of cooking steps" },
+            ingredients: { type: "array", items: {type: "string"}, description: "List of ingredients" },
+            steps: { type: "array", items: {type: "string"}, description: "List of cooking steps" },
             nutrition: { type: "object", properties: {
               calories: { type: "number" },
-              macros: { type: "object" },
+              protein: { type: "string" },
+              fat: { type: "string" },
+              carbs: { type: "string" },
             }, 
             description: "nutrition overview (calories, macros)" },
           },

@@ -3,6 +3,7 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function NewRecipe({navigation}) {
   const [ingredients, setIngredients] = useState('');
+  const [cuisines, setCuisines] = useState('');
   const [fitnessGoals, setFitnessGoals] = useState('');
   const [otherRequests, setOtherRequests] = useState('');
 
@@ -31,9 +32,14 @@ export default function NewRecipe({navigation}) {
         />
       </View>
 
-      <View style={styles.inputBox}>
-        <Text style={styles.inputText}>Food Style</Text>
-        <Text> TWO CARDS HERE - ALLY</Text>
+      <View style={[styles.inputBox]}>
+        <Text style={styles.inputText}>Cuisine Type</Text>
+        <TextInput
+          placeholder="Italian, Chinese, Thai, ..."
+          value={cuisines}
+          onChangeText={setCuisines}
+          style={styles.input}
+        />
       </View>
 
       
@@ -58,7 +64,7 @@ export default function NewRecipe({navigation}) {
         />
       </View>
 
-      <CustomButton title="Generate" callbackFunction={() => {navigation.navigate("Recipe", {ingredients: ingredients.split(","), fitnessGoals: fitnessGoals, otherRequests: otherRequests})}}/>
+      <CustomButton title="Generate" callbackFunction={() => {navigation.navigate("Recipe", {ingredients: ingredients.split(","), fitnessGoals: fitnessGoals, otherRequests: otherRequests, cuisines: cuisines})}}/>
 
 
       

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import CustomButton from '../style/CustomButton';
 
-export default function Login() {
+export default function Login({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -33,12 +33,12 @@ export default function Login() {
 
       {/* Sign in */}
       <View style={styles.button}>
-        <CustomButton title="Login" callbackFunction={() => {}}/> 
+        <CustomButton title="Login" callbackFunction={() => {navigation.navigate("Home")}}/> 
       </View>
       
 
       {/* Sign up */}
-      <Text style={styles.signUpText} onPress={() => {}}>Sign up</Text>
+      <Text style={styles.signUpText} onPress={() => {navigation.navigate("Home")}}>Sign up</Text>
     </View>
   );
 }
