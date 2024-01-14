@@ -6,16 +6,13 @@ import SplashPage from './pages/SplashPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NewRecipe from './pages/NewRecipePage';
+import Profile from './pages/UserPage'
 
 export default function App() {
   return (
-    // <View style={styles.container}>
-    //   <Text>App.js to start working on your app!</Text>
-      <Navigation/>
-      // <Nav/>
-      // <StatusBar style="auto" />
-    // </View>
-    
+     <View style={styles.container}>
+       <Text>App.js to start working on your app!</Text>
+     </View>
   );
 }
 
@@ -24,7 +21,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#000r',
     alignItems: 'center',
     justifyContent: 'center',
   },

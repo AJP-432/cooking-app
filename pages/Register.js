@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { auth } from '../Firebase'
 import CustomButton from '../style/CustomButton';
 
 export default function Register() {
