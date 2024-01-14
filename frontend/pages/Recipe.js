@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import CustomButton from "../style/CustomButton";
 
 export default function Recipe({ route }) {
   const [recipeData, setRecipe] = useState("Loading...");
@@ -80,6 +81,7 @@ export default function Recipe({ route }) {
 
   return (
     <ScrollView style={styles.container}>
+      
       {/* Heading */}
       <View style={styles.titleBox}>
         <Text style={styles.heading}>{recipeData}</Text>
@@ -106,6 +108,8 @@ export default function Recipe({ route }) {
         {/* Dynamic render steps here (set default to 5?) */}
         <Text style={{ width: "80%" }}>{displayNutrition()}</Text>
       </View>
+
+      <CustomButton title="Regenerate Recipe" callbackFunction={() => {fetchOutput()}}/>
     </ScrollView>
   );
 }
