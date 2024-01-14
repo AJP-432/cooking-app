@@ -7,12 +7,13 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NewRecipe from './pages/NewRecipePage';
 import Recipe from './pages/Recipe';
+import Profile from '../pages/UserPage';
 
 export default function App() {
   return (
     // <View style={styles.container}>
     //   <Text>App.js to start working on your app!</Text>
-      <Navigation/>
+      <Profile/>
       // <Nav/>
       // <StatusBar style="auto" />
     // </View>
