@@ -22,8 +22,8 @@ const HomePage = ({ navigation }) => {
   const renderRecipe = ({ item }) => (
     <TouchableOpacity style={styles.recipeCard}>
       <Text style={styles.recipeTitle}>{item.title}</Text>
-      <Text>{item.rating}</Text>
-      <Text>{item.time}</Text>
+      <Text style={styles.recipeTitle}>{item.rating}</Text>
+      <Text style={styles.recipeTitle}>{item.time}</Text>
       {/* Add more details */}
     </TouchableOpacity>
   );
@@ -76,12 +76,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: "#129575",
     opacity: 0.8,
-    width: "80%"
+    width: "80%",
+    color: "white",
     // Add more styling...
   },
   recipeTitle: {
     fontSize: 16,
     fontWeight: "bold",
+    color: "white",
   },
   addButton: {
     backgroundColor: "#129575",
