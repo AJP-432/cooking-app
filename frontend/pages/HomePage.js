@@ -46,7 +46,7 @@ const HomePage = ({ navigation }) => {
       {/ ... */}
         
       </View>
-      <Navigation />
+      <Navigation navigation={navigation}/>
       <TouchableOpacity style={styles.addButton}>
         <Ionicons name="md-add" size={24} color="white" onPress={() => {navigation.navigate("NewRecipe")}}/>
       </TouchableOpacity>
