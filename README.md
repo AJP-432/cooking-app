@@ -8,7 +8,21 @@ To address this issue with modern technology, we developed a phone application w
 
 
 ## Features 📚
+Main pages:
+Authentication page 
+Home page
+Recipe Generation page
+User profile page
+User insight page
+
 SimplYum utilizes AI to generate customized recipes based on the ingredients, the cuisine preference, and the fitness goals the user has. Our app saves the recipes the users create, and allows them to reuse their favorite recipes. Users can also view their daily/weekly calorie and nutrition intake in the user insight page to keep track of their fitness goals. SimplYum  transforms cooking into a simple and enjoyable process, promoting healthy eating habits and a love for cooking.
+
+## How it is built 🛠️
+Tools used:
+IDE: Visual Studio Code, Android studio, Xcode
+Language: Javascript(backend), Javascript/CSS(frontend)
+Other tools and APIs: Figma, Express.js, OpenAI API, React-native, Firebase
+The layout of our project was designed on Figma. After having a formalized layout, the project was created on VScode and tested our front-end code on both Android emulators from Android studio and IOS emulators on Xcode. Backend was built with Express.js and utilized GPT function calling to create customized recipes for our users. FInally, Firebase was used to store user data and execute the authentication workflow.
 
 ## Getting Started 🏁
 Follow these steps to set up and run the SimplYum application locally:
