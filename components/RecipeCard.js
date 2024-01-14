@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     flexShrink: 0, 
   },
   buttonText: {
-    color: 'white',
+    color: 'black',
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
