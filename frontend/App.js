@@ -7,20 +7,32 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NewRecipe from './pages/NewRecipePage';
 import Recipe from './pages/Recipe';
-import Profile from '../pages/UserPage';
+import Profile from './pages/UserPage';
+import Insight from './pages/InsightsPage';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    // <View style={styles.container}>
-    //   <Text>App.js to start working on your app!</Text>
-      <Profile/>
-      // <Nav/>
-      // <StatusBar style="auto" />
-    // </View>
-    
+    <NavigationContainer options={{
+      headerStyle: null,
+    }}>
+    <Stack.Navigator initialRouteName="SplashPage">
+      <Stack.Screen name="Home" component={HomePage}  options={{headerShown: false}}/>
+      <Stack.Screen name="SplashPage" component={SplashPage} options={{headerShown: false}}/>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="NewRecipe" component={NewRecipe} />
+      <Stack.Screen name="Recipe" component={Recipe} />
+      <Stack.Screen name="Profile" component={Profile} />
+      <Stack.Screen name="Insights" component={Insight} />
+      <Stack.Screen name="Navigation" component={Navigation} />
+    </Stack.Navigator>
+  </NavigationContainer>
   );
 }
-
 
 
 const styles = StyleSheet.create({
@@ -30,5 +42,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
 });

@@ -1,80 +1,50 @@
-import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { Ionicons } from '@expo/vector-icons';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
-import Insight from '../pages/InsightsPage';
-import Profile from '../pages/UserPage';
+import Insight from "../pages/InsightsPage";
+import Profile from "../pages/UserPage";
 
 const Tab = createBottomTabNavigator();
 
-const Navigation = () => {
+const Navigation = ({ navigation }) => {
   return (
-    <NavigationContainer>
-      <View style={styles.container}>
-        <Tab.Navigator
-          tabBarOptions={{
-            activeTintColor: '#129575',
-            inactiveTintColor: '#bdc3c7',
-          }}
-        >
-          <Tab.Screen
-            name="Profile"
-            component={Profile}
-            options={{
-              tabBarLabel: 'Profile',
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="body" color={color} size={size} />
-              ),
-            }}
-          />
+    <View style={{ height: "30%" }}>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ color, size }) => {
+            let iconName;
 
-          <Tab.Screen
-            name="Insight"
-            component={Insight}
-            options={{
-              tabBarLabel: 'Insight',
-              tabBarIcon: ({ color, size }) => (
-                <Ionicons name="analytics" color={color} size={size} />
-              ),
-            }}
-          />
-        </Tab.Navigator>
-        
-        {/* Add button in the middle */}
-        <TouchableOpacity style={styles.addButton}>
-          <Ionicons name="md-add" size={24} color="white" />
-        </TouchableOpacity>
-      </View>
-    </NavigationContainer>
+            if (route.name === "Insights") {
+              iconName = "ios-analytics";
+            } else if (route.name === "Profile") {
+              iconName = "ios-person";
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: "green",
+          inactiveTintColor: "gray",
+        }}
+      >
+        <Tab.Screen name="Insights" component={Insight} />
+        <Tab.Screen name="Profile" component={Profile} />
+      </Tab.Navigator>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'relative',
+    position: "relative",
   },
-  addButton: {
-    backgroundColor: '#129575',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    position: 'absolute',
-    bottom: '5%', // Adjust this value based on your design
-    left: '50%',   // Adjust this value based on your design
-    marginLeft: -30,
-    marginBottom: -30,
-    elevation: 3,
-  },
+  
 });
 
 export default Navigation;
-
-
-
-
-

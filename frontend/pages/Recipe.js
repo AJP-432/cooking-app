@@ -1,16 +1,22 @@
 import { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import useFocusedListenersChildrenAdapter from '../node_modules/@react-navigation/core/lib/module/useFocusedListenersChildrenAdapter';
 
-export default function Recipe({ingredients = ["Chicken Breast", "Cereal"], mealType = "Italian", goals = "High Protein"}) {
+export default function Recipe({route}) {
   
-  const [output, setOutput] = useState({ingredients: [], steps: [], nutrition: {macro: "30", calories: "300k"}})
-
+  const [recipeData, setRecipe] = useState('');
+  const [ingredientsData, setIngredients] = useState([]);
+  const [stepsData, setSteps] = useState([]);
+  const [nutritionData, setNutrition] = useState([]);
+  // const [output, setOutput] = useState({recipeName: "...", ingredients: [], steps: [], nutrition: {macro: "30", calories: "300k"}})
+  const {ingredients = ["cereal"], mealType = "Italian", goals = "High Protein"} = route.params
   useEffect(() => {
     fetchOutput();
-  });
+  }, []);
 
   const fetchOutput = () => {
+
+    if (ingredients[0] == "") return;
+    console.log("HDOSIF");
     fetch('http://localhost:3000/generate-recipe', {
       method: 'POST',
       headers: {
@@ -24,7 +30,16 @@ export default function Recipe({ingredients = ["Chicken Breast", "Cereal"], meal
       })
     })
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+      console.log("recipeName", data, data["recipeName"]);
+      console.log(typeof data, Object.keys(data));
+      console.log("recipeName", data.recipeName);
+
+      setRecipe(data.recipeName);
+      setIngredients(data["ingredients"]);
+      setSteps(data["steps"]);
+      setNutrition(data["nutrition"]);
+    })
     .catch(error => console.error('Error:', error));
   }
   
@@ -37,7 +52,7 @@ export default function Recipe({ingredients = ["Chicken Breast", "Cereal"], meal
     <ScrollView style={styles.container}>
       {/* Heading */}
       <View style={styles.titleBox}>
-        <Text style={styles.heading}>Tomato Salad</Text>
+        <Text style={styles.heading}>{recipeData}</Text>
         <Text style={styles.subheading}>What are you cooking today?</Text>
       </View>
 
@@ -45,12 +60,14 @@ export default function Recipe({ingredients = ["Chicken Breast", "Cereal"], meal
       {/* Ingredients */}
       <View style={styles.sections}>
         <Text style={styles.title}>List of Ingredients</Text>
+        <Text style={{width: "80%"}}>{ingredientsData.toString()}</Text>
         {/* Dynamic render list here */}
       </View>
 
       {/* Steps */}
       <View style={styles.sections}>
       <Text style={styles.title}>List of Steps</Text>
+      <Text style={{width: "80%"}}>{stepsData.toString()}</Text>
         {/* Dynamic render steps here (set default to 5?) */}
       </View>
 
@@ -58,6 +75,7 @@ export default function Recipe({ingredients = ["Chicken Breast", "Cereal"], meal
       <View style={styles.sections}>
       <Text style={styles.title}>Nutrition Overview</Text>
         {/* Dynamic render steps here (set default to 5?) */}
+        <Text style={{width: "80%"}}>{nutritionData.toString()}</Text>
       </View>
     </ScrollView>
   );
@@ -72,6 +90,7 @@ const styles = StyleSheet.create({
   },
 
   titleBox: {
+    width: "80%",
     marginTop: '20%'
   },
   heading: {

@@ -4,7 +4,7 @@ import CustomButton from '../style/CustomButton';
 const splashUrl = "../assets/splash-background.png";
 const gordanUrl = "../assets/gordan.png";
 
-export default function SplashPage() {
+export default function SplashPage({navigation}) {
   return (
     <ImageBackground style={styles.image} source={require(splashUrl)}>
       <View style={styles.container} >
@@ -15,7 +15,7 @@ export default function SplashPage() {
         <Text style={styles.splashHeading}>Oi, Get Cooking!</Text>
 
         {/* Enter Button */}
-        <CustomButton title="Start Cooking" callbackFunction={() => {}} style={styles.splashButton}/> 
+        <CustomButton title="Start Cooking" callbackFunction={() => {navigation.navigate('Home')}} style={styles.splashButton}/> 
       </View>
     </ImageBackground>
   );

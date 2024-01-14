@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {Text, View} from 'react-native';
 
@@ -14,4 +13,4 @@ const Insight = () => {
     </View>
   );
 };
-export default Insight; 
+export default Insight;

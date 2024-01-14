@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-export default function NewRecipe() {
+export default function NewRecipe({navigation}) {
   const [ingredients, setIngredients] = useState('');
   const [fitnessGoals, setFitnessGoals] = useState('');
   const [otherRequests, setOtherRequests] = useState('');
@@ -41,9 +41,9 @@ export default function NewRecipe() {
       <Text style={{fontWeight: '100', marginBottom: 10}}>These suggestions are generated based on your past reviews and recipes</Text>
         <Text style={styles.inputText}>Your Fitness Goals</Text>
         <TextInput
-          placeholder="Lettuce, Tomatoes, Ground Beef ..."
-          value={ingredients}
-          onChangeText={setIngredients}
+          placeholder="High Protein, Low Fat, ..."
+          value={fitnessGoals}
+          onChangeText={setFitnessGoals}
           style={styles.input}
         />
       </View>
@@ -51,14 +51,14 @@ export default function NewRecipe() {
       <View style={[styles.inputBox, {marginBottom: 100}]}>
         <Text style={[styles.inputText]}>Other Requests?</Text>
         <TextInput
-          placeholder="Lettuce, Tomatoes, Ground Beef ..."
-          value={ingredients}
-          onChangeText={setIngredients}
+          placeholder="Vegan, Vegetarian, ..."
+          value={otherRequests}
+          onChangeText={setOtherRequests}
           style={styles.input}
         />
       </View>
 
-      <CustomButton title="Generate" callbackFunction={() => {}}/>
+      <CustomButton title="Generate" callbackFunction={() => {navigation.navigate("Recipe", {ingredients: ingredients.split(","), fitnessGoals: fitnessGoals, otherRequests: otherRequests})}}/>
 
 
       
@@ -77,7 +77,7 @@ const screenVw = window.width / 100;
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: '15%',
+    marginTop: '5%',
     height: '100%',
     width: '100%',
     alignItems: 'center',
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     height: 40,
-    width: '100vh'
+    width: '100%'
     
   }
 })
