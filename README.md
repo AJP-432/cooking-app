@@ -40,8 +40,8 @@ Follow these steps to set up and run the FlockStock web application locally:
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 ## Acknowledgments 🫡
-- GPT for providing generative text.
-- 
+GPT for providing generative text.
+  
 ## Author ✍️
 Benny Wu, Ajlal Paracha, Winston Yu, Ally Guo
 
