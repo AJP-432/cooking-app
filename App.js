@@ -6,12 +6,13 @@ import SplashPage from './pages/SplashPage';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NewRecipe from './pages/NewRecipePage';
+import InsightsPage from './pages/InsightsPage';
 
 export default function App() {
   return (
     // <View style={styles.container}>
     //   <Text>App.js to start working on your app!</Text>
-      <Navigation/>
+      <InsightsPage/>
       // <Nav/>
       // <StatusBar style="auto" />
     // </View>
